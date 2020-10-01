@@ -1,7 +1,7 @@
 ---
-- nome: instalar o IIS web service
-hosts: windows
-tasks:
+- name: instalar o IIS web service
+  hosts: Windows
+    tasks:
        - name: install iis
          win_feature:
            name: Web-Server
