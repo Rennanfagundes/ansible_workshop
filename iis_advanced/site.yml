@@ -1,4 +1,4 @@
- ---
+---
     - hosts: windows
       name: This is a play within a playbook
       vars:
@@ -11,7 +11,7 @@
             path: 'C:\sites\playbooktest2'
         iis_test_message: "Hello World!  My test IIS Server"
 
-     tasks:
+      tasks:
         - name: Install IIS
           win_feature:
             name: Web-Server
@@ -54,10 +54,11 @@
             msg: "{{ item }}"
           loop:
             - http://{{ ansible_host }}:8080
-            - http://{{ ansible_host }}:8081      
-     handlers:
+            - http://{{ ansible_host }}:8081
+
+      handlers:
         - name: restart iis service
           win_service:
             name: W3Svc
             state: restarted
-            start_mode: auto   
+            start_mode: auto
