@@ -6,7 +6,7 @@
     - name: stop iis service
       win_feature:
         name: W3Svc
-        state: stop
+        state: stopped
 
     - name: remove iis
       win_service:
