@@ -3,10 +3,6 @@
   hosts: windows
 
   tasks:
-    - name: start iis service
-      win_feature:
-        name: W3Svc
-        state: start
     - name: stopped iis service
       win_feature:
         name: W3Svc
@@ -15,6 +11,9 @@
       win_service:
         name: Web-Server
         state: absent
+    - name: remove iis
+      win_reboot:
+        state: True        
 
     - name: Show website Status
       debug:
