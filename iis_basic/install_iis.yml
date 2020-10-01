@@ -1,5 +1,5 @@
 ---
--nome: instalar o IIS web service
+- nome: instalar o IIS web service
 hosts: windows
 tasks:
        - name: install iis
